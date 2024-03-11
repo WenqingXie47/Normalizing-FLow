@@ -70,6 +70,5 @@ def ferrari(a,b,c,d,e):
     )
     r0,r1=roots2(1,a0,y0+b0)
     r2,r3=roots2(1,-a0,y0-b0)
-    answer = torch.as_tensor(np.array([r0-z0,r1-z0,r2-z0,r3-z0]))
-    answer = torch.transpose(answer,0,1)
+    answer = torch.stack((r0-z0,r1-z0,r2-z0,r3-z0))
     return answer
